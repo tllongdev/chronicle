@@ -1,0 +1,62 @@
+{
+  "id": "snap02",
+  "brief": "Due diligence on Acme Robotics (refresh)",
+  "created_at": "2026-04-20T09:00:00+00:00",
+  "summary": "Acme Robotics has doubled headcount, replaced its founder-CEO with Mark Vale, spun up a defense subsidiary, and taken new money from Orion Ventures. A director of the new subsidiary appears on a sanctions list.",
+  "entities": [
+    {
+      "name": "Acme Robotics",
+      "type": "organization",
+      "attributes": {"hq": "Austin, TX", "employees": "260", "ceo": "Mark Vale", "founded": "2019", "subsidiary": "Acme Defense LLC"},
+      "sources": ["https://acme-robotics.com/about"]
+    },
+    {
+      "name": "Jane Doe",
+      "type": "person",
+      "attributes": {"role": "Board Member"},
+      "sources": ["https://acme-robotics.com/team"]
+    },
+    {
+      "name": "Mark Vale",
+      "type": "person",
+      "attributes": {"role": "CEO", "prior": "COO at Vertex Dynamics"},
+      "sources": ["https://acme-robotics.com/team"]
+    },
+    {
+      "name": "Acme Defense LLC",
+      "type": "organization",
+      "attributes": {"sector": "defense", "incorporated": "2026-02-11", "state": "Delaware"},
+      "sources": ["https://opencorporates.example/acme-defense"]
+    },
+    {
+      "name": "Orion Ventures",
+      "type": "organization",
+      "attributes": {"relationship": "investor", "stage": "Series B"},
+      "sources": ["https://news.example/orion-acme"]
+    },
+    {
+      "name": "Viktor Sokolov",
+      "type": "person",
+      "attributes": {"role": "Director", "sanctioned": "true", "list": "OFAC SDN"},
+      "sources": ["https://opencorporates.example/acme-defense", "https://sanctions.example/sokolov"]
+    },
+    {
+      "name": "acme-robotics.com",
+      "type": "domain",
+      "attributes": {"registrar": "Namecheap", "created": "2019-03-02"},
+      "sources": ["whois"]
+    }
+  ],
+  "edges": [
+    {"source": "Mark Vale", "target": "Acme Robotics", "relationship": "CEO of", "confidence": 0.95, "sources": ["https://acme-robotics.com/team"]},
+    {"source": "Jane Doe", "target": "Acme Robotics", "relationship": "board member of", "confidence": 0.9, "sources": ["https://acme-robotics.com/team"]},
+    {"source": "Acme Robotics", "target": "Acme Defense LLC", "relationship": "owns", "confidence": 0.95, "sources": ["https://opencorporates.example/acme-defense"]},
+    {"source": "Orion Ventures", "target": "Acme Robotics", "relationship": "invested in", "confidence": 0.85, "sources": ["https://news.example/orion-acme"]},
+    {"source": "Viktor Sokolov", "target": "Acme Defense LLC", "relationship": "director of", "confidence": 0.8, "sources": ["https://opencorporates.example/acme-defense"]}
+  ],
+  "observations": [
+    {"content": "Headcount grew from ~120 to ~260 between January and April 2026.", "source": "https://acme-robotics.com/about"},
+    {"content": "Founder Jane Doe stepped down as CEO and moved to the board; Mark Vale (ex-Vertex Dynamics) took over.", "source": "https://news.example/acme-ceo-change"},
+    {"content": "New Delaware subsidiary Acme Defense LLC incorporated Feb 2026; Viktor Sokolov listed as a director and appears on the OFAC SDN list.", "source": "https://sanctions.example/sokolov"}
+  ]
+}

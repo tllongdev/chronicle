@@ -1,0 +1,40 @@
+{
+  "id": "snap01",
+  "brief": "Due diligence on Acme Robotics",
+  "created_at": "2026-01-15T09:00:00+00:00",
+  "summary": "Acme Robotics is an Austin-based robotics startup led by founder-CEO Jane Doe, backed by Nimbus Capital.",
+  "entities": [
+    {
+      "name": "Acme Robotics",
+      "type": "organization",
+      "attributes": {"hq": "Austin, TX", "employees": "120", "ceo": "Jane Doe", "founded": "2019"},
+      "sources": ["https://acme-robotics.com/about"]
+    },
+    {
+      "name": "Jane Doe",
+      "type": "person",
+      "attributes": {"role": "CEO"},
+      "sources": ["https://acme-robotics.com/team"]
+    },
+    {
+      "name": "Nimbus Capital",
+      "type": "organization",
+      "attributes": {"relationship": "investor", "stage": "Series A"},
+      "sources": ["https://news.example/nimbus-acme"]
+    },
+    {
+      "name": "acme-robotics.com",
+      "type": "domain",
+      "attributes": {"registrar": "Namecheap", "created": "2019-03-02"},
+      "sources": ["whois"]
+    }
+  ],
+  "edges": [
+    {"source": "Jane Doe", "target": "Acme Robotics", "relationship": "CEO of", "confidence": 0.95, "sources": ["https://acme-robotics.com/team"]},
+    {"source": "Nimbus Capital", "target": "Acme Robotics", "relationship": "invested in", "confidence": 0.8, "sources": ["https://news.example/nimbus-acme"]}
+  ],
+  "observations": [
+    {"content": "Acme Robotics reports ~120 employees and a single Austin office.", "source": "https://acme-robotics.com/about"},
+    {"content": "Nimbus Capital led the Series A round in 2024.", "source": "https://news.example/nimbus-acme"}
+  ]
+}

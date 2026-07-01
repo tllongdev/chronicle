@@ -1,0 +1,11 @@
+services:
+  chronicle:
+    build: .
+    image: chronicle:latest
+    volumes:
+      - ./output:/app/output
+      - ./samples:/app/samples:ro
+      - ./chronicle.db:/app/chronicle.db
+    environment:
+      - CHRONICLE_DB=/app/chronicle.db
+      - CHRONICLE_OUT=/app/output
