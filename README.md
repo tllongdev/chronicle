@@ -1,4 +1,11 @@
-# Chronicle
+```text
+  _____ _                     _      _
+ / ____| |                   (_)    | |
+| |    | |__  _ __ ___  _ __  _  ___| | ___
+| |    | '_ \| '__/ _ \| '_ \| |/ __| |/ _ \
+| |____| | | | | | (_) | | | | | (__| |  __/   longitudinal
+ \_____|_| |_|_|  \___/|_| |_|_|\___|_|\___|   intelligence
+```
 
 **A longitudinal intelligence layer.** Most OSINT and intelligence tools give you a
 snapshot: who's connected to whom, right now. Chronicle adds the missing axis -
